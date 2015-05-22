@@ -2,7 +2,7 @@
   "name": "mounts",
   "version": "1.0.0",
   "description": "",
-  "main": "app/index.html",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +22,14 @@
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
     "gulp-debug": "^2.0.1",
+    "jquery": "^2.1.4"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.4",
+    "browser-sync": "^2.7.3",
+    "gulp-debug": "^2.0.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
     "jquery": "^2.1.4"
   }
 }

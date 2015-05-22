@@ -15,8 +15,8 @@ var config = {
 
 gulp.task('html', function() {
 	gulp.src('app/index.html')
-		.pipe(gulp.dest('public'));
-		// TODO: reload.
+		.pipe(gulp.dest('public'))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('scripts', function() {
@@ -30,14 +30,14 @@ gulp.task('scripts', function() {
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'))
 		.pipe(jqueryFilter.restore())
-		.pipe(gulp.dest('public/js'));
-		// TODO: reload.
+		.pipe(gulp.dest('public/js'))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('styles', function() {
 	gulp.src('app/styles/**/*.css')
-		.pipe(gulp.dest('public/css'));
-		// TODO: reload.
+		.pipe(gulp.dest('public/css'))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('bootstrap-styles', function() {
@@ -57,16 +57,14 @@ gulp.task('bootstrap-fonts', function() {
 
 gulp.task('bootstrap', ['bootstrap-styles', 'bootstrap-scripts', 'bootstrap-fonts']);
 
-gulp.task('default', ['html', 'scripts', 'styles', 'bootstrap'], function() {
-	console.log('Default task!');
-});
+gulp.task('default', ['html', 'scripts', 'styles', 'bootstrap']);
 
 gulp.task('serve', function() {
 	browserSync({
 		server: './public'
 	});
 
-  	//gulp.watch('app/styles/**/*.scss', ['styles']);
-  	//gulp.watch('app/scripts/**/*.js', ['scripts']);
-  	//gulp.watch('app/*.html', ['html']);
+  	gulp.watch('app/styles/**/*.css', ['styles']);
+  	gulp.watch('app/scripts/**/*.js', ['scripts']);
+  	gulp.watch('app/*.html', ['html']);
 });

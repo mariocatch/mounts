@@ -1,1 +1,5 @@
-console.log('Test');
+$(document).ready(function() {
+	$('#test').click(function() {
+		alert('Test');
+	});
+});

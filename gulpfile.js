@@ -1,5 +1,8 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
+var filter = require('gulp-filter');
+
 var debug = require('gulp-debug');
 
 var browserSync = require('browser-sync');
@@ -17,10 +20,16 @@ gulp.task('html', function() {
 });
 
 gulp.task('scripts', function() {
+	var jqueryFilter = filter('site.js');
+
 	gulp.src([
-		'app/scripts/**/*.js',
+		'./app/scripts/**/*.js',
 		config.jqueryRoot + '*.min.js'
 		])
+		.pipe(jqueryFilter)
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'))
+		.pipe(jqueryFilter.restore())
 		.pipe(gulp.dest('public/js'));
 		// TODO: reload.
 });

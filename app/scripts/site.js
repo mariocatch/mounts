@@ -22,6 +22,7 @@ $(document).ready(function() {
 	
 	$('#search form').submit(function(e) {
 		e.preventDefault();
+		$('#character').select();
 		$('#results .container').fadeOut();
 		var container = $('#mounts-row > .mounts-container');
 		container.empty();
@@ -76,6 +77,10 @@ $(document).ready(function() {
 
 				$('#search form').css('opacity', '1');
 				$('#results .container').fadeIn();
+				
+			 	$('html, body').animate({
+    				scrollTop: $("#character").offset().top - 40
+				}, 1000);
 			}
 		});
 		

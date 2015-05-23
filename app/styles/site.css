@@ -1,10 +1,10 @@
 body,html {
 	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
+	font-weight: 100 !important;
 }
 
 h1,h2,h3,h4,h5,h6{
-	font-weight: 300;
+	font-weight: 100;
 }
 
 .navbar {
@@ -12,4 +12,102 @@ h1,h2,h3,h4,h5,h6{
 	margin: 0;
 	border: none;
 	border-radius: 0;	
+}
+
+.navbar-brand {
+	padding-top: 10px;
+}
+
+.nav.navbar-nav li a {
+	font-size: 20px;
+	color: #FFF;
+}
+
+.jumbotron {
+	background: #000;
+	color: #666;
+}
+
+.jumbotron img {
+	text-align: center;
+	display: inline-block;
+}
+
+.jumbotron h1 {
+	font-size: 40px;
+	padding: 0 30px;
+}
+
+.jumbotron strong {
+	font-weight: 300;
+}
+
+.jumbotron .btn {
+	margin-top: 15px;
+	width: 25%;
+	height: 60px;
+	font-size: 25px;
+	background: rgba(255,255,255,0.8);
+	border-radius: 30px;
+	color: #000;
+	border: none;
+	transition: all 0.2s ease-out;
+	outline: none;
+}
+
+.jumbotron .btn:hover {
+	outline: none;
+	box-shadow: 0px 0px 15px 2px #EEE;
+}
+
+.jumbotron .btn:focus,
+.jumbotron .btn:active {
+	outline: none;
+}
+
+#search {
+	text-align: center;
+	padding: 10px 0 50px 0;
+	box-shadow: 0 15px 20px -20px #000;
+}
+
+#search form {
+	transition: opacity 0.3s ease-out;
+}
+
+#search input {
+	width: 500px;
+}
+
+#search button.btn-lg {
+	background: #222;
+	color: #999;
+}
+
+#search input,
+#search button.btn-lg,
+#search select {	
+	box-shadow: 0px 0px 5px 0px #000;
+	border: none;
+	outline: none;
+	transition: all 0.2s ease-out;
+}
+
+#search input:hover,
+#search button.btn-lg:hover,
+#search select:hover {
+	box-shadow: 0px 0px 5px 2px #000;
+}
+
+#search input:focus,
+#search input:active,
+#search button.btn-lg:focus,
+#search button.btn-lg:active,
+#search select:focus,
+#search select:active {
+	outline: none;
+}
+
+#results {
+	padding: 50px;
 }

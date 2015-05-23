@@ -14,17 +14,51 @@
 	<body>
 		
 		<nav class="navbar navbar-default navbar-inverse">
-			
-		</nav>
-		
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h1>_mounts</h1>
-					<btn id="test" class="btn btn-lg btn-primary">Click Me</btn>
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="images/mountsIconWhiteSolo.png"></a></a>
+				</div> <!-- brand/toggle -->
+				<div class="collapse navbar-collapse" id="nav-menu">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="">Sign In</a></li>
+					</ul>
 				</div>
 			</div>
-		</div>
+		</nav>
+		
+		<section id="jumbo">
+			<div class="jumbotron">
+				<div class="container text-center">
+					<img class="img-responsive" src="images/mountsLogoWhite.png">
+					<h1>Welcome to <strong>Mounts</strong>, a place where you can track your collected mounts in World of Warcraft!</h1>
+					<button class="btn btn-lg">Get Started Now!</button>
+				</div>
+			</div>		
+		</section>
+		
+		<section id="search">
+			<form class="form-inline">
+				<div class="form-group">
+					<input id="character" class="form-control input-lg" type="text" placeholder="Search character..." required></input>
+					<select id="server" class="form-control input-lg" required>
+						<option selected value="stormrage">Stormrage</option>
+					</select>
+					<button id="btn-search-character" type="submit" class="btn-lg"><span class="glyphicon glyphicon-search"</span></button>
+				</div>
+			</form>
+		</section>
+		
+		<section id="results">
+			<div class="text-center">
+				
+			</div>
+		</section>
 		
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>		

@@ -19,6 +19,11 @@ gulp.task('html', function() {
 		.pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('images', function() {
+	gulp.src('./app/images/**/*')
+		.pipe(gulp.dest('public/images'));
+})
+
 gulp.task('scripts', function() {
 	var jqueryFilter = filter('site.js');
 
@@ -57,7 +62,7 @@ gulp.task('bootstrap-fonts', function() {
 
 gulp.task('bootstrap', ['bootstrap-styles', 'bootstrap-scripts', 'bootstrap-fonts']);
 
-gulp.task('default', ['html', 'scripts', 'styles', 'bootstrap']);
+gulp.task('default', ['html', 'scripts', 'styles', 'images', 'bootstrap']);
 
 gulp.task('serve', function() {
 	browserSync({

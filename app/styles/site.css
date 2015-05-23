@@ -1,6 +1,6 @@
 body,html {
 	font-family: 'Roboto', sans-serif;
-	font-weight: 100 !important;
+	font-weight: 100;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -110,4 +110,28 @@ h1,h2,h3,h4,h5,h6{
 
 #results {
 	padding: 50px;
+}
+
+.mounts-container {
+	width: 100%;
+	text-align: center;
+	margin-left: 50px;
+}
+
+.mount {
+	border: 1px solid green;
+	text-align: center;
+	width: 20%;
+	height: 150px;
+	float: left;
+	transition: box-shadow 0.2s ease-out;
+	margin: 10px;
+}
+
+.mount h3.mount-name {
+	font-weight: 400;
+}
+
+.mount:hover {
+	box-shadow: 0px 0px 5px 0px #000;
 }

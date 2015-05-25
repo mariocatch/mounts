@@ -85,6 +85,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #search input,
+#results input,
 #search button.btn-lg,
 #search select {	
 	box-shadow: 0px 0px 5px 0px #000;
@@ -95,6 +96,8 @@ h1,h2,h3,h4,h5,h6{
 
 #search input:hover,
 #search input:focus,
+#results input:hover,
+#results input:focus,
 #search button.btn-lg:hover,
 #search button.btn-lg:focus,
 #search select:hover,
@@ -104,6 +107,8 @@ h1,h2,h3,h4,h5,h6{
 
 #search input:focus,
 #search input:active,
+#results input:focus,
+#results input:active,
 #search button.btn-lg:focus,
 #search button.btn-lg:active,
 #search select:focus,
@@ -189,35 +194,118 @@ h1,h2,h3,h4,h5,h6{
 	height: 50px;
 }
 
+.mount-id {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: rgba(0,0,0,0.5);
+	padding: 10px;
+	color: #FFF;
+	border-bottom-left-radius: 15px;
+	font-weight: 300;
+	font-family: monospace;
+}
+
 .mount:hover {
 	box-shadow: 0px 0px 15px 0px #000;
 	border-width: 5px;
 }
 
-.legendary {
+.filter-container {
+	width: 50%;
+	margin: 15px auto 20px;
+	display: block;	 
+	position: relative;
+}
+
+#filter-tip {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 20px;
+	transition: all 0.2s ease-out;
+}
+
+.tooltip {
+	width: 100px;
+}
+
+#filter-tip:hover {
+	color: #000;
+}
+
+#mounts-row {
+	clear: both;
+}
+
+.rarity-legendary {
 	border-color: #ff8000;
 }
 
-.epic {
+.rarity-epic {
 	border-color: #c600ff;
 }
 
-.rare {
+.rarity-rare {
 	border-color: #0081ff;
 }
 
-.uncommon {
+.rarity-uncommon {
 	border-color: #1eff00;
 }
 
-.common {
+.rarity-common {
 	border-color: #FFF;
 }
 
-.junk {
+.rarity-junk {
 	border-color: #9d9d9d;
 }
 
-.crafted {
+.rarity-crafted {
 	border-color: #e5cc80;
+}
+
+.deathknight {
+	color : #C41F3B;
+}
+
+.druid {
+	color : #FF7D0A;
+}
+
+.hunter {
+	color : #ABD473;
+}
+
+.mage {
+	color : #69CCF0;
+}
+
+.monk {
+	color : #00FF96;
+}
+
+.paladin {
+	color : #F58CBA;
+}
+
+.priest {
+	color : #FFFFFF;
+}
+
+.rogue {
+	color : #FFF569;
+}
+
+.shaman {
+	color : #0070DE;
+}
+
+.warlock {
+	color : #9482C9;
+}
+
+.warrior {
+	color : #C79C6E;
 }

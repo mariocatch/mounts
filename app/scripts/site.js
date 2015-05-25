@@ -34,6 +34,23 @@ $(document).ready(function() {
 		$('#character').focus();
 	});
 	
+	$('[data-toggle="tooltip"]').tooltip();
+	
+	$('#filter').on('input', function() {
+		var query = $(this).val().toLowerCase();
+		
+		$('.mount').filter(function(i, e) {
+			var name = $(e).find('.mount-name').text().toLowerCase();
+			var rarity = $(e).attr('class').split(' ')[1].split('-')[1].toLowerCase();
+			return (name.indexOf(query) >= 0 ||
+					 rarity.indexOf(query) >= 0);
+		}).show().invert().hide().end();
+	});
+	
+	$.fn.invert = function() {
+  		return this.end().not(this);
+	};
+	
 	var loadCharacter = function(container, data) {
 		var collected = data.mounts.numCollected;
 		var total = data.mounts.numCollected + data.mounts.numNotCollected;
@@ -41,17 +58,27 @@ $(document).ready(function() {
 		var mounts = data.mounts.collected;
 		var characterThumbnail = thumbnailApi + data.thumbnail;
 		
-		$('#results .character-name').html(data.name);
-		$('#results .character-class').html(classes[data.class]);
-		$('#results .character-mounts-collected').html(collected);
-		$('#results .total-mounts').html(total);
-		$('#results .mounts-left').html('(' + left + ' remaining)');
+		$('.character-name').html(data.name);
+		$('.character-class').html(classes[data.class]);
+		$('.character-class, .character-name').addClass(classes[data.class].toLowerCase());
+		$('.character-mounts-collected').html(collected);
+		$('.total-mounts').html(total);
+		$('.mounts-left').html('(' + left + ' remaining)');
 		$('#character-thumbnail').attr('src', characterThumbnail);
 		
 		var i = 0;
 		$.each(mounts, function(k,v) {
 			i++;
-			var mountToAdd = $('<div hidden style="background-image: url(' + mountThumbnailApi + mounts[k].creatureId +'.jpg)" class="mount ' + qualities[mounts[k].qualityId] + '"><div class="mount-header"><h3 class="mount-name">' + mounts[k].name + '</h3></div><div class="mount-body"></div></div>');					
+			var mountToAdd = 
+			$('<div hidden style="background-image: url(' + mountThumbnailApi + mounts[k].creatureId +'.jpg)" class="mount rarity-' + qualities[mounts[k].qualityId] + '">' +
+					'<div class="mount-header">' + 
+						'<h3 class="mount-name">' + mounts[k].name + '</h3>' +
+					'</div>' +
+					'<div class="mount-id">' +
+					'</div>' +
+				'</div>');
+				
+				mountToAdd.find('.mount-id').html(i);
 		 	mountToAdd.appendTo(container).delay(50*i).fadeIn();
 		});		
 
